@@ -47,6 +47,11 @@
         /* Masquer le sélecteur de langue (maintenant qu'il est géré automatiquement) */
         /* Changez en 'display: flex' si vous voulez le rendre visible pour tester manuellement */
         #language-switcher { display: none !important; }
+        
+        /* Badges pour le portefeuille */
+        .badge-available { background-color: #DEF7EC; color: #03543F; }
+        .badge-acquired { background-color: #F3F4F6; color: #374151; border: 1px solid #D1D5DB; }
+        .badge-negotiation { background-color: #FEF3C7; color: #92400E; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -72,7 +77,13 @@
                         <span data-lang="fr" class="lang-content active inline">Expertise</span>
                         <span data-lang="en" class="lang-content inline">Expertise</span>
                     </a>
-                    <!-- Ajout du lien "Why Premium" -->
+                    
+                    <!-- Lien Portfolio Ajouté -->
+                    <a href="#portfolio" class="nav-link nav-item pb-1" data-page="portfolio" onclick="showPage('portfolio')">
+                        <span data-lang="fr" class="lang-content active inline">Portefeuille</span>
+                        <span data-lang="en" class="lang-content inline">Portfolio</span>
+                    </a>
+
                     <a href="#why-premium" class="nav-link nav-item pb-1" data-page="why-premium" onclick="showPage('why-premium')">
                         <span data-lang="fr" class="lang-content active inline">Pourquoi Premium ?</span>
                         <span data-lang="en" class="lang-content inline">Why Premium?</span>
@@ -108,7 +119,13 @@
                 <span data-lang="fr" class="lang-content active">Expertise</span>
                 <span data-lang="en" class="lang-content">Expertise</span>
             </a>
-            <!-- Lien Mobile Why Premium -->
+            
+             <!-- Lien Portfolio Mobile -->
+             <a href="#portfolio" class="block py-2 nav-item" data-page="portfolio" onclick="showPage('portfolio')">
+                <span data-lang="fr" class="lang-content active">Portefeuille</span>
+                <span data-lang="en" class="lang-content">Portfolio</span>
+            </a>
+
             <a href="#why-premium" class="block py-2 nav-item" data-page="why-premium" onclick="showPage('why-premium')">
                 <span data-lang="fr" class="lang-content active">Pourquoi Premium ?</span>
                 <span data-lang="en" class="lang-content">Why Premium?</span>
@@ -138,23 +155,67 @@
         <section id="home" class="page-content pt-16 pb-20 active">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Hero -->
-                <div class="text-center max-w-4xl mx-auto mb-20">
-                    <h1 class="text-5xl sm:text-6xl font-black text-gray-900 leading-tight mb-4">
-                        <span data-lang="fr" class="lang-content active inline">Nous sécurisons les domaines qui <span class="text-primary">définissent votre leadership.</span></span>
-                        <span data-lang="en" class="lang-content inline">We secure the domains that <span class="text-primary">define your leadership.</span></span>
+                <div class="text-center max-w-4xl mx-auto mb-16">
+                    <h1 class="text-5xl sm:text-7xl font-black text-gray-900 leading-tight mb-6">
+                        <span data-lang="fr" class="lang-content active inline">Sécurisez l'Adresse de <span class="text-primary">Votre Succès Futur.</span></span>
+                        <span data-lang="en" class="lang-content inline">Secure the Address of <span class="text-primary">Your Future Success.</span></span>
                     </h1>
-                    <h2 class="text-xl sm:text-2xl text-gray-600 mb-8">
-                        <span data-lang="fr" class="lang-content active">De l'identification ultra-confidentielle à la signature sans friction, nous gérons l'acquisition stratégique de votre nom de domaine de classe mondiale.</span>
-                        <span data-lang="en" class="lang-content">From ultra-confidential identification to frictionless closing, we manage the strategic acquisition of your world-class domain name.</span>
-                    </h2>
-                    <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
-                        <span data-lang="fr" class="lang-content active">Nous transformons l'outbound complexe en succès discret et mesurable, garantissant que votre marque possède le terrain qui lui est dû.</span>
-                        <span data-lang="en" class="lang-content">We transform complex outbound strategy into discreet, measurable success, ensuring your brand owns the digital real estate it deserves.</span>
+                    
+                    <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        <span data-lang="fr" class="lang-content active">Dans l'économie numérique, votre domaine est votre actif principal. Nous gérons l'acquisition, la négociation et l'évaluation pour les entreprises visionnaires.</span>
+                        <span data-lang="en" class="lang-content">In the digital economy, your domain is your primary asset. We manage acquisition, negotiation, and valuation for visionary companies.</span>
                     </p>
-                    <a href="#contact" onclick="showPage('contact')" class="bg-accent text-white font-extrabold py-4 px-10 rounded-xl shadow-xl hover:shadow-2xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105 text-lg">
-                        <span data-lang="fr" class="lang-content active inline">Démarrez votre Évaluation Gratuite</span>
-                        <span data-lang="en" class="lang-content inline">Start Your Free Evaluation</span>
-                    </a>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="#contact" onclick="showPage('contact')" class="bg-primary text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl hover:bg-opacity-90 transition duration-300 text-lg flex items-center">
+                            <span data-lang="fr" class="lang-content active inline">Obtenir une Évaluation Gratuite &rarr;</span>
+                            <span data-lang="en" class="lang-content inline">Get a Free Evaluation &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Section Approuvé par les Leaders (Social Proof) -->
+                <div class="mb-20 pt-10 border-t border-gray-100">
+                    <p class="text-center text-gray-400 text-xs uppercase tracking-widest mb-8 font-bold">
+                        <span data-lang="fr" class="lang-content active">Partenaires de Confiance & Infrastructure</span>
+                        <span data-lang="en" class="lang-content">Trusted Partners & Infrastructure</span>
+                    </p>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 hover:opacity-100 transition-all duration-500 grayscale hover:grayscale-0">
+                        
+                         <!-- Escrow Logo -->
+                        <div class="flex items-center space-x-2" title="Escrow.com">
+                            <svg class="h-8 w-auto text-gray-600" viewBox="0 0 110 30" fill="currentColor">
+                                <path d="M10,5 L20,0 L30,5 V15 C30,22 20,28 20,28 C20,28 10,22 10,15 V5 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <text x="35" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="currentColor">ESCROW</text>
+                            </svg>
+                        </div>
+
+                        <!-- Sedo Logo -->
+                        <div class="flex items-center space-x-2" title="Sedo">
+                            <svg class="h-6 w-auto text-gray-600" viewBox="0 0 80 30" fill="currentColor">
+                                <text x="0" y="22" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="currentColor">sedo</text>
+                                <circle cx="65" cy="10" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+
+                        <!-- GoDaddy Logo -->
+                        <div class="flex items-center space-x-2" title="GoDaddy">
+                            <svg class="h-6 w-auto text-gray-600" viewBox="0 0 120 30" fill="currentColor">
+                                <path d="M10,15 Q5,5 15,5 T20,15 T25,25" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                                <text x="30" y="22" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="currentColor">GoDaddy</text>
+                            </svg>
+                        </div>
+
+                        <!-- ICANN Logo (Ajouté pour la crédibilité institutionnelle) -->
+                         <div class="flex items-center space-x-2" title="ICANN Accredited">
+                            <svg class="h-7 w-auto text-gray-600" viewBox="0 0 100 30" fill="currentColor">
+                                <circle cx="15" cy="15" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10 15h10M15 10v10" stroke="currentColor" stroke-width="2"/>
+                                <text x="35" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="currentColor">ICANN</text>
+                            </svg>
+                        </div>
+
+                    </div>
                 </div>
 
                 <!-- Section Pourquoi Nous Choisir / Bénéfices -->
@@ -198,6 +259,170 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Page: Portefeuille & Opportunités -->
+        <section id="portfolio" class="page-content pt-16 pb-20 hidden">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <header class="text-center max-w-4xl mx-auto mb-16">
+                    <p class="text-sm font-semibold uppercase text-accent mb-2">
+                        <span data-lang="fr" class="lang-content active">Marché & Track Record</span>
+                        <span data-lang="en" class="lang-content">Market & Track Record</span>
+                    </p>
+                    <h1 class="text-4xl sm:text-5xl font-black text-primary mb-4">
+                        <span data-lang="fr" class="lang-content active">Opportunités Exclusives & Acquisitions.</span>
+                        <span data-lang="en" class="lang-content">Exclusive Opportunities & Acquisitions.</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <span data-lang="fr" class="lang-content active">Une sélection d'actifs numériques actuellement sous gestion exclusive ou récemment acquis pour nos clients (données anonymisées par respect pour les NDA).</span>
+                        <span data-lang="en" class="lang-content">A selection of digital assets currently under exclusive management or recently acquired for our clients (data anonymized in respect of NDAs).</span>
+                    </p>
+                </header>
+
+                <!-- Grille des Domaines -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    
+                    <!-- Carte 1: Opportunité (Available) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-gray-50 p-6 border-b border-gray-100 flex justify-between items-center">
+                            <span class="font-bold text-gray-400">TECHNOLOGIE</span>
+                            <span class="badge-available px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                                <span data-lang="fr" class="lang-content active">Disponible</span>
+                                <span data-lang="en" class="lang-content">Available</span>
+                            </span>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-3xl font-black text-primary mb-2">Ventures.io</h3>
+                            <p class="text-gray-500 text-sm mb-6">
+                                <span data-lang="fr" class="lang-content active">Idéal pour: VC, Fonds d'Investissement, Tech Startups.</span>
+                                <span data-lang="en" class="lang-content">Ideal for: VCs, Investment Funds, Tech Startups.</span>
+                            </p>
+                            <div class="flex justify-center space-x-4 text-sm font-semibold text-gray-600 mb-6">
+                                <span>High DA</span>
+                                <span>•</span>
+                                <span>Premium TLD</span>
+                            </div>
+                            <a href="#contact" onclick="showPage('contact')" class="block w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                                <span data-lang="fr" class="lang-content active">Demander le Prix</span>
+                                <span data-lang="en" class="lang-content">Inquire Price</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Carte 2: Opportunité (Available) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-gray-50 p-6 border-b border-gray-100 flex justify-between items-center">
+                            <span class="font-bold text-gray-400">FINANCE</span>
+                            <span class="badge-available px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                                <span data-lang="fr" class="lang-content active">Disponible</span>
+                                <span data-lang="en" class="lang-content">Available</span>
+                            </span>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-3xl font-black text-primary mb-2">Pay.net</h3>
+                            <p class="text-gray-500 text-sm mb-6">
+                                <span data-lang="fr" class="lang-content active">Mot-clé unique. Potentiel de marque global immédiat.</span>
+                                <span data-lang="en" class="lang-content">Single keyword. Immediate global brand potential.</span>
+                            </p>
+                             <div class="flex justify-center space-x-4 text-sm font-semibold text-gray-600 mb-6">
+                                <span>Aged Domain</span>
+                                <span>•</span>
+                                <span>Short URL</span>
+                            </div>
+                            <a href="#contact" onclick="showPage('contact')" class="block w-full bg-white border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition duration-300">
+                                <span data-lang="fr" class="lang-content active">Faire une Offre</span>
+                                <span data-lang="en" class="lang-content">Make an Offer</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Carte 3: Track Record (Acquired - Anonyme) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative">
+                        <div class="absolute inset-0 bg-gray-50 bg-opacity-50 z-0"></div> <!-- Overlay effect for sold -->
+                        <div class="bg-gray-100 p-6 border-b border-gray-200 flex justify-between items-center relative z-10">
+                            <span class="font-bold text-gray-500">SANTÉ / AI</span>
+                            <span class="badge-acquired px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                                <span data-lang="fr" class="lang-content active">Acquis (Confidentiel)</span>
+                                <span data-lang="en" class="lang-content">Acquired (NDA)</span>
+                            </span>
+                        </div>
+                        <div class="p-8 text-center relative z-10 opacity-75">
+                            <h3 class="text-3xl font-black text-gray-700 mb-2">[Hidden].ai</h3>
+                            <p class="text-gray-500 text-sm mb-6">
+                                <span data-lang="fr" class="lang-content active">Acquis pour une plateforme de diagnostic médical (Série B).</span>
+                                <span data-lang="en" class="lang-content">Acquired for a medical diagnostic platform (Series B).</span>
+                            </p>
+                            <p class="text-sm font-bold text-accent">
+                                <span data-lang="fr" class="lang-content active">Transaction à 6 chiffres</span>
+                                <span data-lang="en" class="lang-content">6-figure Transaction</span>
+                            </p>
+                        </div>
+                    </div>
+
+                     <!-- Carte 4: Track Record (Acquired - Anonyme) -->
+                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 relative">
+                        <div class="absolute inset-0 bg-gray-50 bg-opacity-50 z-0"></div>
+                        <div class="bg-gray-100 p-6 border-b border-gray-200 flex justify-between items-center relative z-10">
+                            <span class="font-bold text-gray-500">E-COMMERCE</span>
+                            <span class="badge-acquired px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                                <span data-lang="fr" class="lang-content active">Acquis (Confidentiel)</span>
+                                <span data-lang="en" class="lang-content">Acquired (NDA)</span>
+                            </span>
+                        </div>
+                        <div class="p-8 text-center relative z-10 opacity-75">
+                            <h3 class="text-3xl font-black text-gray-700 mb-2">Shop[...].com</h3>
+                            <p class="text-gray-500 text-sm mb-6">
+                                <span data-lang="fr" class="lang-content active">Domaine exact-match de catégorie "Retail".</span>
+                                <span data-lang="en" class="lang-content">Exact-match "Retail" category domain.</span>
+                            </p>
+                            <p class="text-sm font-bold text-accent">
+                                <span data-lang="fr" class="lang-content active">Négocié -40% vs Marché</span>
+                                <span data-lang="en" class="lang-content">Negotiated -40% vs Market</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Carte 5: Opportunité (Negotiation) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div class="bg-gray-50 p-6 border-b border-gray-100 flex justify-between items-center">
+                            <span class="font-bold text-gray-400">CRYPTO</span>
+                            <span class="badge-negotiation px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                                <span data-lang="fr" class="lang-content active">Sous Offre</span>
+                                <span data-lang="en" class="lang-content">Under Offer</span>
+                            </span>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-3xl font-black text-primary mb-2">Chain.pro</h3>
+                            <p class="text-gray-500 text-sm mb-6">
+                                <span data-lang="fr" class="lang-content active">Infrastructure blockchain et services pro.</span>
+                                <span data-lang="en" class="lang-content">Blockchain infrastructure and pro services.</span>
+                            </p>
+                            <a href="#contact" onclick="showPage('contact')" class="block w-full bg-gray-100 text-gray-500 font-bold py-3 rounded-lg cursor-not-allowed">
+                                <span data-lang="fr" class="lang-content active">Liste d'Attente</span>
+                                <span data-lang="en" class="lang-content">Waitlist</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Carte 6: Call to Action Off-Market -->
+                    <div class="bg-primary rounded-xl shadow-lg overflow-hidden border border-primary text-white flex flex-col justify-center items-center p-8 text-center hover:bg-opacity-95 transition-all cursor-pointer" onclick="showPage('contact')">
+                        <svg class="w-16 h-16 text-accent mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        <h3 class="text-2xl font-bold mb-2">
+                            <span data-lang="fr" class="lang-content active">Accès Off-Market</span>
+                            <span data-lang="en" class="lang-content">Off-Market Access</span>
+                        </h3>
+                        <p class="text-indigo-200 text-sm mb-6">
+                            <span data-lang="fr" class="lang-content active">Nos meilleurs actifs ne sont pas listés publiquement. Accédez à notre inventaire privé.</span>
+                            <span data-lang="en" class="lang-content">Our best assets are not listed publicly. Access our private inventory.</span>
+                        </p>
+                        <span class="underline font-bold text-accent">
+                            <span data-lang="fr" class="lang-content active">Contacter un Courtier &rarr;</span>
+                            <span data-lang="en" class="lang-content">Contact a Broker &rarr;</span>
+                        </span>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -706,6 +931,244 @@
             </div>
         </section>
 
+        <!-- Nouvelle Page: Mentions Légales -->
+        <section id="legal" class="page-content pt-16 pb-20 hidden bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                <h1 class="text-3xl sm:text-4xl font-black text-primary mb-8 border-b-2 border-accent pb-4">
+                    <span data-lang="fr" class="lang-content active">Mentions Légales</span>
+                    <span data-lang="en" class="lang-content">Legal Notice</span>
+                </h1>
+
+                <div class="space-y-8 text-gray-700">
+                    <!-- 1. Éditeur -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">1. Éditeur du Site</span>
+                            <span data-lang="en" class="lang-content">1. Site Editor</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                <strong>UNUS Domain Strategy</strong><br>
+                                Société par Actions Simplifiée (SAS) au capital de 100 000 €<br>
+                                Immatriculée au RCS de Paris sous le numéro 123 456 789<br>
+                                Siège social : 12 Avenue des Champs-Élysées, 75008 Paris, France.<br>
+                                Directeur de la publication : Jean Dupont<br>
+                                Email : legal@unus-strategy.com
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                <strong>UNUS Domain Strategy</strong><br>
+                                Simplified Joint Stock Company (SAS) with a capital of €100,000<br>
+                                Registered with the Paris RCS under number 123 456 789<br>
+                                Headquarters: 12 Avenue des Champs-Élysées, 75008 Paris, France.<br>
+                                Publication Director: Jean Dupont<br>
+                                Email: legal@unus-strategy.com
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 2. Hébergement -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">2. Hébergement</span>
+                            <span data-lang="en" class="lang-content">2. Hosting</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Ce site est hébergé par une infrastructure cloud sécurisée conforme aux normes ISO 27001.<br>
+                                Prestataire : AWS Europe (Paris) / Vercel Inc.<br>
+                                Adresse : 340 S Lemon Ave #4133 Walnut, CA 91789, USA.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                This site is hosted on a secure cloud infrastructure compliant with ISO 27001 standards.<br>
+                                Provider: AWS Europe (Paris) / Vercel Inc.<br>
+                                Address: 340 S Lemon Ave #4133 Walnut, CA 91789, USA.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 3. Propriété Intellectuelle -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">3. Propriété Intellectuelle</span>
+                            <span data-lang="en" class="lang-content">3. Intellectual Property</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques. La marque "UNUS" est une marque déposée.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                The entire site is subject to French and international legislation on copyright and intellectual property. All reproduction rights are reserved, including for downloadable documents and iconographic and photographic representations. The "UNUS" brand is a registered trademark.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 4. Données Personnelles (GDPR) -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">4. Protection des Données (RGPD)</span>
+                            <span data-lang="en" class="lang-content">4. Data Protection (GDPR)</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Les informations recueillies via le formulaire de contact sont enregistrées dans un fichier informatisé par UNUS Domain Strategy pour la gestion de notre clientèle. Elles sont conservées pendant 3 ans et sont destinées exclusivement au service commercial établi dans l'Union Européenne. Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d'accès aux données vous concernant et les faire rectifier en contactant : dpo@unus-strategy.com.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                Information collected via the contact form is recorded in a computerized file by UNUS Domain Strategy for customer management. It is kept for 3 years and is intended exclusively for the sales department located in the European Union. In accordance with the "Informatique et Libertés" law and GDPR, you can exercise your right of access to data concerning you and have it rectified by contacting: dpo@unus-strategy.com.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 5. Limitation de Responsabilité -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">5. Limitation de Responsabilité</span>
+                            <span data-lang="en" class="lang-content">5. Limitation of Liability</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                UNUS Domain Strategy s'efforce d'assurer l'exactitude des informations diffusées sur ce site. Toutefois, nous ne pouvons garantir l'exactitude ou l'exhaustivité des informations. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive. Les estimations de valeur de domaine sont fournies à titre indicatif et ne constituent pas une expertise légale opposable.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                UNUS Domain Strategy strives to ensure the accuracy of the information published on this site. However, we cannot guarantee the accuracy or completeness of the information. Consequently, the user acknowledges using this information under their exclusive responsibility. Domain value estimates are provided for indicative purposes only and do not constitute an enforceable legal appraisal.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <a href="#home" onclick="showPage('home')" class="text-primary hover:text-accent font-semibold transition duration-300">
+                        <span data-lang="fr" class="lang-content active">&larr; Retour à l'accueil</span>
+                        <span data-lang="en" class="lang-content">&larr; Back to Home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nouvelle Page: Politique de Confidentialité -->
+        <section id="privacy" class="page-content pt-16 pb-20 hidden bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+                <h1 class="text-3xl sm:text-4xl font-black text-primary mb-8 border-b-2 border-accent pb-4">
+                    <span data-lang="fr" class="lang-content active">Politique de Confidentialité</span>
+                    <span data-lang="en" class="lang-content">Privacy Policy</span>
+                </h1>
+
+                <div class="space-y-8 text-gray-700">
+                    <!-- 1. Introduction -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">1. Engagement de Confidentialité</span>
+                            <span data-lang="en" class="lang-content">1. Commitment to Confidentiality</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Chez UNUS Domain Strategy, la confidentialité n'est pas une option, c'est notre produit. Nous nous engageons à protéger la confidentialité et la sécurité de vos informations personnelles et stratégiques avec la plus grande rigueur. Cette politique détaille comment nous traitons les données que nous recueillons.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                At UNUS Domain Strategy, confidentiality is not an option, it is our product. We are committed to protecting the privacy and security of your personal and strategic information with the utmost rigor. This policy details how we handle the data we collect.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 2. Données Collectées -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">2. Données Collectées</span>
+                            <span data-lang="en" class="lang-content">2. Collected Data</span>
+                        </h2>
+                        <p class="mb-2">
+                            <span data-lang="fr" class="lang-content active">Nous collectons uniquement les données strictement nécessaires à l'exécution de nos missions d'acquisition et de conseil :</span>
+                            <span data-lang="en" class="lang-content">We only collect data strictly necessary for the execution of our acquisition and consulting missions:</span>
+                        </p>
+                        <ul class="list-disc ml-6 space-y-1">
+                            <li>
+                                <span data-lang="fr" class="lang-content active">Identité (Nom, Prénom, Société)</span>
+                                <span data-lang="en" class="lang-content">Identity (Name, Surname, Company)</span>
+                            </li>
+                            <li>
+                                <span data-lang="fr" class="lang-content active">Coordonnées (Email professionnel, Téléphone)</span>
+                                <span data-lang="en" class="lang-content">Contact details (Professional Email, Phone)</span>
+                            </li>
+                            <li>
+                                <span data-lang="fr" class="lang-content active">Données stratégiques (Noms de domaines ciblés, Budgets, Projets de marque)</span>
+                                <span data-lang="en" class="lang-content">Strategic data (Targeted domain names, Budgets, Brand projects)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Utilisation des Données -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">3. Utilisation des Données & Secret des Affaires</span>
+                            <span data-lang="en" class="lang-content">3. Data Usage & Trade Secrets</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Vos données sont utilisées exclusivement pour : la communication avec vous, la négociation (sous couvert d'anonymat), et la facturation. <strong>Nous ne vendons, ne louons et ne partageons jamais vos données personnelles ou vos intentions d'achat à des tiers</strong> à des fins marketing. Les cibles d'acquisition sont traitées sous le sceau du secret des affaires.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                Your data is used exclusively for: communicating with you, negotiation (under cover of anonymity), and billing. <strong>We never sell, rent, or share your personal data or purchase intentions with third parties</strong> for marketing purposes. Acquisition targets are treated under the seal of trade secrecy.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 4. Partage Tiers (Escrow) -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">4. Partage avec les Tiers de Confiance</span>
+                            <span data-lang="en" class="lang-content">4. Sharing with Trusted Third Parties</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Dans le seul cadre de la finalisation d'une transaction, certaines données peuvent être transmises à nos partenaires de sécurisation (ex: Escrow.com, Sedo Transfer Service) pour satisfaire aux exigences légales de transfert de propriété (KYC/AML). Ces partenaires sont soumis aux mêmes exigences strictes de confidentialité.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                Solely within the framework of finalizing a transaction, certain data may be transmitted to our security partners (e.g., Escrow.com, Sedo Transfer Service) to meet legal property transfer requirements (KYC/AML). These partners are subject to the same strict confidentiality requirements.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 5. Sécurité -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">5. Sécurité des Données</span>
+                            <span data-lang="en" class="lang-content">5. Data Security</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Nous mettons en œuvre des mesures de sécurité techniques (chiffrement SSL/TLS, bases de données cloisonnées) et organisationnelles (accès restreint au personnel habilité) pour protéger vos données contre tout accès non autorisé, perte ou altération.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                We implement technical (SSL/TLS encryption, siloed databases) and organizational (access restricted to authorized personnel) security measures to protect your data against unauthorized access, loss, or alteration.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- 6. Cookies -->
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900 mb-2">
+                            <span data-lang="fr" class="lang-content active">6. Cookies & Traceurs</span>
+                            <span data-lang="en" class="lang-content">6. Cookies & Trackers</span>
+                        </h2>
+                        <p>
+                            <span data-lang="fr" class="lang-content active">
+                                Ce site utilise un nombre minimal de cookies, strictement nécessaires au fonctionnement technique (mémorisation de la langue) et à la mesure d'audience anonyme. Aucune donnée n'est croisée avec des profils publicitaires tiers.
+                            </span>
+                            <span data-lang="en" class="lang-content">
+                                This site uses a minimal number of cookies, strictly necessary for technical operation (language preference) and anonymous audience measurement. No data is cross-referenced with third-party advertising profiles.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <a href="#home" onclick="showPage('home')" class="text-primary hover:text-accent font-semibold transition duration-300">
+                        <span data-lang="fr" class="lang-content active">&larr; Retour à l'accueil</span>
+                        <span data-lang="en" class="lang-content">&larr; Back to Home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contenu des autres pages (Placeholder) -->
         <section id="results" class="page-content pt-16 pb-20 hidden">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
@@ -772,6 +1235,11 @@
                             <span data-lang="fr" class="lang-content active">Négociation & Vente</span>
                             <span data-lang="en" class="lang-content">Negotiation & Sales</span>
                         </a></li>
+                        <!-- Lien Portfolio Footer Ajouté -->
+                         <li><a href="#portfolio" onclick="showPage('portfolio')" class="hover:text-accent transition duration-150">
+                            <span data-lang="fr" class="lang-content active">Portefeuille</span>
+                            <span data-lang="en" class="lang-content">Portfolio</span>
+                        </a></li>
                         <li><a href="#expertise" onclick="showPage('expertise')" class="hover:text-accent transition duration-150">
                             <span data-lang="fr" class="lang-content active">Leasing Stratégique</span>
                             <span data-lang="en" class="lang-content">Strategic Leasing</span>
@@ -812,11 +1280,11 @@
                         <span data-lang="en" class="lang-content">Legal</span>
                     </h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-accent transition duration-150">
+                        <li><a href="#legal" onclick="showPage('legal')" class="hover:text-accent transition duration-150">
                             <span data-lang="fr" class="lang-content active">Mentions Légales</span>
                             <span data-lang="en" class="lang-content">Legal Notice</span>
                         </a></li>
-                        <li><a href="#" class="hover:text-accent transition duration-150">
+                        <li><a href="#privacy" onclick="showPage('privacy')" class="hover:text-accent transition duration-150">
                             <span data-lang="fr" class="lang-content active">Politique de Confidentialité</span>
                             <span data-lang="en" class="lang-content">Privacy Policy</span>
                         </a></li>
@@ -827,6 +1295,60 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Logos Partenaires / Trust Badges -->
+            <div class="border-b border-gray-700 pb-8 mb-8">
+                <p class="text-center text-gray-500 text-xs uppercase tracking-widest mb-6 font-semibold">
+                    <span data-lang="fr" class="lang-content active">Partenaires de Confiance & Sécurisation</span>
+                    <span data-lang="en" class="lang-content">Trusted Partners & Security</span>
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+                    
+                    <!-- Escrow.com Style Logo -->
+                    <div class="flex items-center space-x-2 group hover:opacity-100 transition-opacity duration-300" title="Escrow">
+                        <svg class="h-8 w-auto text-gray-400 group-hover:text-white" viewBox="0 0 110 30" fill="currentColor">
+                            <path d="M10,5 L20,0 L30,5 V15 C30,22 20,28 20,28 C20,28 10,22 10,15 V5 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <text x="35" y="21" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="currentColor">ESCROW</text>
+                        </svg>
+                    </div>
+
+                    <!-- Secure Transfer Logo -->
+                    <div class="flex items-center space-x-2 group hover:opacity-100 transition-opacity duration-300" title="Secure Transfer">
+                        <svg class="h-7 w-auto text-gray-400 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span class="text-lg font-bold text-gray-400 group-hover:text-white font-sans tracking-tight">TRANSFERT</span>
+                    </div>
+
+                    <!-- Premium Domains Logo -->
+                    <div class="flex items-center space-x-2 group hover:opacity-100 transition-opacity duration-300" title="Premium Domains">
+                        <svg class="h-7 w-auto text-gray-400 group-hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                        <span class="text-lg font-bold text-gray-400 group-hover:text-white font-serif italic">Premium</span>
+                    </div>
+
+                    <!-- Sedo Logo Style -->
+                    <div class="flex items-center space-x-2 group hover:opacity-100 transition-opacity duration-300" title="Sedo">
+                        <svg class="h-6 w-auto text-gray-400 group-hover:text-white" viewBox="0 0 80 30" fill="currentColor">
+                            <text x="0" y="22" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="currentColor">sedo</text>
+                            <circle cx="65" cy="10" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+
+                    <!-- GoDaddy Logo Style -->
+                    <div class="flex items-center space-x-2 group hover:opacity-100 transition-opacity duration-300" title="GoDaddy">
+                        <svg class="h-7 w-auto text-gray-400 group-hover:text-white" viewBox="0 0 120 30" fill="currentColor">
+                            <!-- Icon abstract representation -->
+                            <path d="M10,15 Q5,5 15,5 T20,15 T25,25" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <text x="30" y="22" font-family="Arial, sans-serif" font-weight="bold" font-size="18" fill="currentColor">GoDaddy</text>
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+
             <div class="text-center text-sm text-gray-500">
                 &copy; 2025 UNUS Domain Strategy.
                 <span data-lang="fr" class="lang-content active">Tous droits réservés. L'Acquisition Stratégique. Sans Compromis.</span>

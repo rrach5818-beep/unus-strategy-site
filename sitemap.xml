@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
   <url>
     <loc>https://unusdomain.com/</loc>
     <lastmod>2025-01-01</lastmod>
   </url>
+
+  <!-- Expertise / Services -->
+  <url>
+    <loc>https://unusdomain.com/expertise.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
+  <!-- Portfolio -->
+  <url>
+    <loc>https://unusdomain.com/portfolio.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
+  <!-- Pourquoi Premium -->
+  <url>
+    <loc>https://unusdomain.com/pourquoi-premium.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
+  <!-- Résultats / Results -->
+  <url>
+    <loc>https://unusdomain.com/resultats.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
+  <!-- Approche / Approach -->
+  <url>
+    <loc>https://unusdomain.com/approche.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
+  <!-- À propos / About -->
+  <url>
+    <loc>https://unusdomain.com/a-propos.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://unusdomain.com/contact.html</loc>
+    <lastmod>2025-01-01</lastmod>
+  </url>
+
 </urlset>
